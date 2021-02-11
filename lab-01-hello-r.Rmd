@@ -15,6 +15,52 @@ library(datasauRus)
 ```
 
 
+
 ### Lab Exercise
 
 (Type your answer to the Exercise here. Remember to include the code, you need to put the code between three backticks followed by the following line on top of the code {r load-packages, message=FALSE}. See 'Load Packages' above as an example. Delete everything in these brackets after typing your answer.)
+```{r load-packages, message=FALSE}
+head(datasaurus_dozen)
+summary(datasaurus_dozen)
+View(datasaurus_dozen)
+datasaurus_dozen %>%
+ count(dataset) %>%
+ print(13)
+```
+
+```{r load-packages, message=FALSE}
+dino_data <- datasaurus_dozen %>%
+ filter(dataset == "dino")
+ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
+geom_point()
+```
+
+```{r load-packages, message=FALSE}
+star_data <- datasaurus_dozen %>%filter(dataset == "star")
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +geom_point()
+```
+
+```{r load-packages, message=FALSE}
+
+circle_data <- datasaurus_dozen %>%
+ filter(dataset == "circle")
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
+
+```
+
+```
+code :
+circle_data <- datasaurus_dozen %>%filter(dataset == "circle")
+ ggplot(data = circle_data, mapping = aes(x = x, y = y)) +geom_point()
+ 
+ (Correlation Coefficient = -0.0645) in dino
+ (the graph like dino)
+ (Correlation Coefficient = -0.0683) in circle
+ (the graph like circle)
+ 
+```
+
+
+
+
